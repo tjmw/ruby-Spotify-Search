@@ -1,19 +1,17 @@
 = spotify_search
 
-Description goes here.
+Simple interface to the Spotify metadata search API.
 
-== Contributing to spotify_search
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+This product uses a SPOTIFY API but is not endorsed, certified or otherwise
+approved in any way by Spotify. Spotify is the registered trade mark of the
+Spotify Group.
+
+You should make sure you agree to the Spotify Metadata Terms of Use before
+using this module:
+
+http://developer.spotify.com/en/metadata-api/terms-of-use/
 
 == Copyright
 
-Copyright (c) 2011 Tom Wey. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Tom Wey. See LICENSE.txt for further details.
 

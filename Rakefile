@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "spotify_search"
   gem.homepage = "http://github.com/tjmw/spotify_search"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Simple interface to the Spotify metadata search API}
+  gem.description = %Q{Simple interface to the Spotify metadata search API}
   gem.email = "tjmwey@gmail.com"
   gem.authors = ["Tom Wey"]
   # dependencies defined in Gemfile
