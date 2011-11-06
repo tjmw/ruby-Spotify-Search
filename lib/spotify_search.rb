@@ -21,8 +21,9 @@ module Spotify
     # Spotify search parent class
     class Spotify::Search
 
-        attr_reader :string
+        attr_reader :search_string
         attr_reader :results
+        attr_reader :page
 
         # Create a new Spotify search
         def initialize(search_string, page=1)

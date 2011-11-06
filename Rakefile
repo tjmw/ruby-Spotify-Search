@@ -19,7 +19,7 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{Simple interface to the Spotify metadata search API}
   gem.description = %Q{Simple interface to the Spotify metadata search API}
-  gem.email = "tjmwey@gmail.com"
+  gem.email = "tjmwey [at] gmail [dot] com"
   gem.authors = ["Tom Wey"]
   # dependencies defined in Gemfile
 end
@@ -28,14 +28,14 @@ Jeweler::RubygemsDotOrgTasks.new
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
+  test.pattern = 'test/test_*.rb'
   test.verbose = true
 end
 
 require 'rcov/rcovtask'
 Rcov::RcovTask.new do |test|
   test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
+  test.pattern = 'test/test_*.rb'
   test.verbose = true
   test.rcov_opts << '--exclude "gems/*"'
 end
@@ -49,5 +49,5 @@ Rake::RDocTask.new do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "spotify_search #{version}"
   rdoc.rdoc_files.include('README*')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+  rdoc.rdoc_files.include('lib/*.rb')
 end

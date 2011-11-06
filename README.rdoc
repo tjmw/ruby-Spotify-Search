@@ -1,13 +1,14 @@
 = spotify_search
 
 Simple interface to the Spotify metadata search API.
+Really just an experiment/work in progress at the moment.
 
 This product uses a SPOTIFY API but is not endorsed, certified or otherwise
 approved in any way by Spotify. Spotify is the registered trade mark of the
 Spotify Group.
 
-You should make sure you agree to the Spotify Metadata Terms of Use before
-using this module:
+You should make sure you agree to the Spotify Metadata API Terms of Use before
+using this module to access the API:
 
 http://developer.spotify.com/en/metadata-api/terms-of-use/
 
