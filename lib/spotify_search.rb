@@ -17,6 +17,7 @@ require 'htmlentities'
 module Spotify
 
     SEARCH_BASE_URL = 'http://ws.spotify.com/search/1' 
+    LINK_BASE_URL   = 'http://open.spotify.com' 
 
     # Spotify search parent class
     class Spotify::Search
@@ -68,11 +69,11 @@ module Spotify
             decoder = HTMLEntities.new
 
             xml.elements.each('//artists/artist') do |result|
-                id   = decoder.decode(result.attribute('href'))
+                uri  = decoder.decode(result.attribute('href'))
                 name = decoder.decode(result.get_text('name'))
 
                 @results << Spotify::Search::Result::Artist.new(
-                    :id   => id,
+                    :uri  => uri,
                     :name => name
                 )
             end
@@ -93,12 +94,12 @@ module Spotify
             decoder = HTMLEntities.new
 
             xml.elements.each('//albums/album') do |result|
-                id     = decoder.decode(result.attribute('href'))
+                uri    = decoder.decode(result.attribute('href'))
                 name   = decoder.decode(result.get_text('name'))
                 artist = decoder.decode(result.get_text('artist/name'))
 
                 @results << Spotify::Search::Result::Album.new(
-                    :id     => id,
+                    :uri     => uri,
                     :name   => name,
                     :artist => artist
                 )
@@ -120,13 +121,13 @@ module Spotify
             decoder = HTMLEntities.new
 
             xml.elements.each('//tracks/track') do |result|
-                id     = decoder.decode(result.attribute('href'))
+                uri    = decoder.decode(result.attribute('href'))
                 name   = decoder.decode(result.get_text('name'))
                 artist = decoder.decode(result.get_text('artist/name'))
                 album  = decoder.decode(result.get_text('album/name'))
 
                 @results << Spotify::Search::Result::Track.new(
-                    :id     => id,
+                    :uri    => uri,
                     :name   => name,
                     :artist => artist,
                     :album  => album
@@ -139,14 +140,18 @@ module Spotify
     # Spotify search result parent class
     class Spotify::Search::Result
 
-        attr_reader :id
+        attr_reader :uri
         attr_reader :name
 
         def initialize(args)
-            @id   = args[:id] 
+            @uri  = args[:uri] 
             @name = args[:name] 
         end
 
+        def link
+            base, type, id = @uri.split(':')
+            return "#{LINK_BASE_URL}/#{type}/#{id}"
+        end
     end
 
     # Spotify artist search result
