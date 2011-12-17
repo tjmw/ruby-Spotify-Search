@@ -99,7 +99,7 @@ module Spotify
                 artist = decoder.decode(result.get_text('artist/name'))
 
                 @results << Spotify::Search::Result::Album.new(
-                    :uri     => uri,
+                    :uri    => uri,
                     :name   => name,
                     :artist => artist
                 )
